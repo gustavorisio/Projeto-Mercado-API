@@ -1,2 +1,2 @@
 # Project-API
-Aqui irei trabalhar com a API
+Estou programando com TypeScript uma API de mercado.
