@@ -5,10 +5,6 @@ class UpdateUserController {
         const { name, email, admin, password } = request.body
         //:id para fazer a requisição do update.
         const id = request.params.id;
-        console.log(name);
-        console.log(email);
-        console.log(admin);
-        console.log(password);
         const user =
         {
             id: id,
@@ -17,9 +13,9 @@ class UpdateUserController {
             admin: admin,
             password: password,
         };
-        const createuserService = new UpdateUserService()
-        const ret = await createuserService.execute(user)
-        return response.json({ message: "Registro editado com sucesso" });
+        const updateuserService = new UpdateUserService()
+        const ret = await updateuserService.execute(user)
+        return response.json(ret);
     }
 }
 export { UpdateUserController };

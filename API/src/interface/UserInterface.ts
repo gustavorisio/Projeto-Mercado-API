@@ -6,4 +6,4 @@ interface IUserRequest {
     password: string;
 }
 
-export {IUserRequest}
+export { IUserRequest }

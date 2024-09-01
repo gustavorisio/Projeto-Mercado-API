@@ -11,7 +11,7 @@ class UpdateUserService {
         var user = {
             id: id, name: name, email: email, admin: admin, password: password
         }
-        return { message: "Registro Update com sucesso" };
+        return { message: "User Update com sucesso" };
     }
 }
 export { UpdateUserService };

@@ -8,7 +8,7 @@ class CreateUserService {
         if (!password) {
             throw new Error("Password Incorrect")
         }
-        return { message: "Registro incluido com sucesso" };
+        return { message: "User incluido com sucesso" };
     }
 }
 export { CreateUserService };
