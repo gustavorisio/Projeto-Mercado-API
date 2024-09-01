@@ -1,4 +1,3 @@
-
 class ListUsersService {
     async execute() {
         const users = [

@@ -14,6 +14,12 @@ import { CreateProductController } from "./controller/product/CreateProductContr
 import { ListProductController } from "./controller/product/ListProductController";
 import { UpdateProductController } from "./controller/product/UpdateProductController";
 import { DeleteProductController } from "./controller/product/DeleteProductController";
+//CLIENT
+import { CreateClientController } from "./controller/client/CreateClientController";
+import { ListClientController } from "./controller/client/ListClientController";
+import { UpdateClientController } from "./controller/client/UpdateClientController";
+import { DeleteClientController } from "./controller/client/DeleteClientController";
+//SALE
 
 const router = Router();
 //USER
@@ -31,6 +37,13 @@ const createProductController = new CreateProductController();
 const listProductController = new ListProductController();
 const updateProductController = new UpdateProductController();
 const deleteProductController = new DeleteProductController();
+//CLIENT
+const createClientController = new CreateClientController();
+const listClientController = new ListClientController();
+const updateClientController = new UpdateClientController();
+const deleteClientController = new DeleteClientController();
+//SALE
+
 
 //USER
 router.post("/users", createUserController.handle);
@@ -47,5 +60,10 @@ router.post("/product", createProductController.handle);
 router.get("/product", listProductController.handle);
 router.put("/product/:id", updateProductController.handle);
 router.delete("/product/:id", deleteProductController.handle);
+//CLIENT
+router.post("/client", createClientController.handle);
+router.get("/client", listClientController.handle);
+router.put("/client/:id", updateClientController.handle);
+router.delete("/client/:id", deleteClientController.handle);
 
 export { router };
