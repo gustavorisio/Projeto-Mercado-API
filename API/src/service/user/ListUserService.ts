@@ -8,8 +8,8 @@ class ListUsersService {
                 password: "1234",
             },
             {
-                name: "UMC",
-                email: "umc@umc.com",
+                name: "Fabio",
+                email: "fabio@umc.com",
                 admin: false,
                 password: "1234",
             }
