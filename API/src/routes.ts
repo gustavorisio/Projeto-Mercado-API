@@ -24,7 +24,10 @@ import { CreateSaleController } from "./controller/sale/CreateSaleController";
 import { ListSaleController } from "./controller/sale/ListSaleController";
 import { UpdateSaleController } from "./controller/sale/UpdateSaleController";
 import { DeleteSaleController } from "./controller/sale/DeleteSaleController";
+//LOGIN
+import { AuthenticateUserController } from "./controller/autentication/AutenticateUserController";
 
+import { ensureAuthenticated } from "./middleware/ensureAuthenticated";
 
 const router = Router();
 //USER
@@ -52,7 +55,8 @@ const createSaleController = new CreateSaleController();
 const listSaleController = new ListSaleController();
 const updateSaleController = new UpdateSaleController();
 const deleteSaleController = new DeleteSaleController();
-
+//LOGIN
+const autenticateUserController = new AuthenticateUserController();
 
 //USER
 router.post("/users", createUserController.handle);
@@ -79,5 +83,8 @@ router.post("/sale", createSaleController.handle);
 router.get("/sale", listSaleController.handle);
 router.put("/sale/:id", updateSaleController.handle);
 router.delete("/sale/:id", deleteSaleController.handle);
+//LOGIN
+router.post("/login", autenticateUserController.handle);
 
+router.use(ensureAuthenticated);
 export { router };

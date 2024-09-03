@@ -1,4 +1,4 @@
-import { IClientRequest } from "../../interface/ClientInterface";
+import { IClientRequest } from "../../interface/IClientInterface";
 
 class CreateClientService {
     async execute({ id, name, description, cpf, address, fone }: IClientRequest) {

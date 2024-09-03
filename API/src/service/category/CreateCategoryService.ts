@@ -1,4 +1,4 @@
-import { ICategoryRequest } from "../../interface/CategoryInterface";
+import { ICategoryRequest } from "../../interface/ICategoryInterface";
 
 class CreateCategoryService {
     async execute({ id, name, description }: ICategoryRequest) {

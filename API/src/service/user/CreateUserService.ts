@@ -1,4 +1,4 @@
-import { IUserRequest } from "../../interface/UserInterface";
+import { IUserRequest } from "../../interface/IUserInterface";
 
 class CreateUserService {
     async execute({ name, email, admin = false, password }: IUserRequest) {
