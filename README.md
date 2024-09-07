@@ -1,6 +1,8 @@
 # Project-API
 Estou programando com TypeScript uma API de mercado.
 
-A API possui controlador, interface e serviços com rotas. 
+A API possui autenticação, controlador, interface, serviços organizados em rotas. 
 
-Possui também create, update, delete e list para category, product, client, user e sale.
+Funcionalidades: create, update, delete e list para category, product, client, user e sale.
+
+A API será segura, com autenticação de usuário e senhas criptografadas.
