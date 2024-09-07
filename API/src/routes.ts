@@ -27,7 +27,7 @@ import { DeleteSaleController } from "./controller/sale/DeleteSaleController";
 //LOGIN
 import { AuthenticateUserController } from "./controller/autentication/AutenticateUserController";
 
-import { ensureAuthenticated } from "./middleware/ensureAuthenticated";
+import { ensureAutenticated } from "./controller/middleware/ensureAutenticated";
 
 const router = Router();
 //USER
@@ -86,5 +86,5 @@ router.delete("/sale/:id", deleteSaleController.handle);
 //LOGIN
 router.post("/login", autenticateUserController.handle);
 
-router.use(ensureAuthenticated);
+router.use(ensureAutenticated);
 export { router };

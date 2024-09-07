@@ -1,0 +1,16 @@
+{
+   "type": "postgres",
+   "host": "localhost",
+   "port": 5432,
+   "username": "postgres",
+   "password": "UMC",
+   "database": "API",
+   "synchronize": false,
+   "logging": false,
+   "migrations": ["./src/database/migrations/*.js"],
+   "entities": ["./src/entities/*.ts"],
+   "cli": {
+       "migrationsDir": "./src/database/migrations",
+       "entitiesDir": "./src/entities"
+   }
+}
