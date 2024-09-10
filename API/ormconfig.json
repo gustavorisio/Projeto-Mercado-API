@@ -7,7 +7,7 @@
    "database": "API",
    "synchronize": false,
    "logging": false,
-   "migrations": ["./src/database/migrations/*.js"],
+   "migrations": ["./src/database/migrations/*.ts"],
    "entities": ["./src/entities/*.ts"],
    "cli": {
        "migrationsDir": "./src/database/migrations",
