@@ -11,7 +11,6 @@ class CreateUserService {
             throw new Error("Password Incorrect")
         }
         const passwordHash = await hash(password, 8);
-
         const usersRepository = getCustomRepository(UsersRepositories)
         const user = usersRepository.create(
             {

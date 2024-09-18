@@ -3,9 +3,10 @@ import { CreateUserService } from "../../service/user/CreateUserService";
 
 class CreateUserController {
     async handle(request: Request, response: Response) {
-        const { name, email, admin, password } = request.body
+        const { id, name, email, admin, password } = request.body
         const user =
         {
+            id: id,
             name: name,
             email: email,
             admin: admin,
