@@ -1,22 +1,13 @@
+import { getCustomRepository } from "typeorm";
+import { ClientRepositories } from "../../repositories/clientRepositories";
+
 class ListClientService {
-    async execute() {
-        const client = [
-            {
-                name: "Gustavo",
-                description: "Client",
-                cpf: 1010101010,
-                address: "AVENIDA",
-                fone: 119901010101,
-            },
-            {
-                name: "Fabio",
-                description: "Client",
-                cpf: 202020202020,
-                address: "AVENIDA",
-                fone: 119902020201,
-            }
-        ];
-        return client
-    }
+        async execute() {
+            const clientRepositories = getCustomRepository(ClientRepositories); 
+            const client = await clientRepositories
+            .createQueryBuilder("product")
+            .getMany();
+            return client
+        }
 }
 export { ListClientService };

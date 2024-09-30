@@ -1,4 +1,6 @@
+import { getCustomRepository } from "typeorm";
 import { IProductRequest } from "../../interface/IProductInterface";
+import { ProductRepositories } from "../../repositories/productRepositories";
 
 class UpdateProductService {
     async execute({ id, name, description, price, categoryId }: IProductRequest) {
@@ -11,10 +13,22 @@ class UpdateProductService {
         if (!categoryId) {
             throw new Error("CategoryId Incorrect")
         }
-        var product = {
-            id: id, name: name, description: description, price: price, categoryId: categoryId
+        const productRepository = getCustomRepository(ProductRepositories);
+
+        const productAlreadyExists = await productRepository.findOne({
+          id,
+        });
+        if (!productAlreadyExists) {
+          throw new Error("User not exists");
         }
-        return { message: "Product Update com sucesso" };
-    }
+    
+        productAlreadyExists.name=name
+        productAlreadyExists.description=description
+        productAlreadyExists.price=price
+        productAlreadyExists.categoryId=categoryId
+    
+        const product = await productRepository.update(id,productAlreadyExists)
+        return product
+      }
 }
 export { UpdateProductService };

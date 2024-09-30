@@ -1,19 +1,12 @@
+import { getCustomRepository } from "typeorm";
+import { ProductRepositories } from "../../repositories/productRepositories";
+
 class ListProductService {
     async execute() {
-        const product = [
-            {
-                name: "CADERNO",
-                description: "100 FOLHAS",
-                price: 40,
-                categoryId: 1234,
-            },
-            {
-                name: "LAPIS",
-                description: "BRASFORT",
-                price: 1,
-                categoryId: 4321,
-            }
-        ];
+        const productRepositories = getCustomRepository(ProductRepositories); 
+        const product = await productRepositories
+        .createQueryBuilder("product")
+        .getMany();
         return product
     }
 }

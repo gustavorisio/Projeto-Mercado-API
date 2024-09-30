@@ -1,5 +1,6 @@
 import { UsersRepositories } from "../../repositories/userRepositories";
 import { getCustomRepository } from "typeorm";
+import { IUserRequest } from "../../interface/IUserInterface";
 class DeleteUserService {
     async execute(id: any) {
         if (!id) {
@@ -17,10 +18,10 @@ class DeleteUserService {
 
         const ret = await usersRepository.delete(id);
 
-        var messagmsDelete = {
+        var messagmsgeDelete = {
             message: "Registro Excluido com sucesso"
         }
-        return messagmsDelete;
+        return messagmsgeDelete;
 
     }
 }

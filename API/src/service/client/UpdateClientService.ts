@@ -1,4 +1,6 @@
+import { getCustomRepository } from "typeorm";
 import { IClientRequest } from "../../interface/IClientInterface";
+import { ClientRepositories } from "../../repositories/clientRepositories";
 
 class UpdateClientService {
     async execute({ id, name, description, cpf, address, fone }: IClientRequest) {
@@ -14,10 +16,23 @@ class UpdateClientService {
         if (!fone) {
             throw new Error("Fone Incorrect")
         }
-        var product = {
-            id: id, name: name, description: description, cpf: cpf, address: address, fone: fone
+        const clientRepository = getCustomRepository(ClientRepositories);
+
+        const clientAlreadyExists = await clientRepository.findOne({
+          id,
+        });
+        if (!clientAlreadyExists) {
+          throw new Error("User not exists");
         }
-        return { message: "Client Update com sucesso" };
-    }
+    
+        clientAlreadyExists.name=name
+        clientAlreadyExists.description=description
+        clientAlreadyExists.cpf=cpf
+        clientAlreadyExists.address=address
+        clientAlreadyExists.fone=fone
+    
+        const client = await clientRepository.update(id,clientAlreadyExists)
+        return client
+      }
 }
 export { UpdateClientService };
