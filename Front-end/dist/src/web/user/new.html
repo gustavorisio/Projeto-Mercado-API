@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usuario</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+    <table>
+      <h1>Gestão Usuário</h1>
+      <h2>Cadastrar novo usuário no sistema</h2>
+      <p>Preencha os campos abaixo.</p>
+      <tr>
+        <td><label>Nome:</label></td>
+        <td><input type="text" /></td>
+      </tr>
+      <tr>
+        <td><label>email:</label></td>
+        <td><input type="text" /></td>
+      </tr>
+      <tr>
+        <td><label>Senha:</label></td>
+        <td><input type="text" /></td>
+      </tr>
+      <tr>
+        <td><label>Ativo:</label></td>
+        <td><input type="checkbox" /></td>
+      </tr>
+      <tr>
+        <td><label>Perfil:</label></td>
+        <td><Select>
+            <option>Administrador</option>
+            <option>Gestor</option>
+        </Select></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="button" value="Salvar" />
+          <input type="button" value="Limpar" />
+          <a href="/menu.html">Voltar ao menu</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <table width="400">
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Gustavo</td>
+            <td>gustavo@umc.br</td>
+            <td><input type="button" value="Editar"/></td>
+            <td><input type="button" value="Excluir"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Anny</td>
+            <td>anny@umc.br</td>
+            <td><input type="button" value="Editar"/></td>
+            <td><input type="button" value="Excluir"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Rafael</td>
+            <td>rafael@umc.br</td>
+            <td><input type="button" value="Editar"/></td>
+            <td><input type="button" value="Excluir"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Iago</td>
+            <td>iago@umc.br</td>
+            <td><input type="button" value="Editar"/></td>
+            <td><input type="button" value="Excluir"></td>
+        </tr>
+    </table>
+  </body>
+</html>
